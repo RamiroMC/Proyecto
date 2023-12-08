@@ -5,6 +5,13 @@
 
 package InterfacesApp;
 
+import ClasesApp.Mecanico;
+import InterfacesLogin.Login;
+import InterfacesLogin.LoginNuevo;
+import InterfacesLogin.RegistroNuevo;
+import java.util.ArrayList;
+
+
 /**
  *
  * @author MADE
@@ -281,7 +288,35 @@ public class Tablon extends javax.swing.JFrame {
     }//GEN-LAST:event_ConsultaTMouseClicked
 
     private void CerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerrarSesionMouseClicked
-        // TODO add your handling code here:
+        //TODO add your handling code here:
+        
+        try {
+         
+        //Leer mecánicos desde el archivo binario
+        ArrayList<Mecanico> mecanicos = RegistroNuevo.leerBinario("mecanicos.dat");
+
+        //Buscar el mecánico autenticado y actualizar su estado
+        for (Mecanico mecanico : mecanicos) {
+            if (mecanico.getEstado()) {
+                //Actualizar el estado
+                mecanico.setEstado(false);
+                break;
+            }
+        }
+
+            //Escribir los mecánicos actualizados en el archivo binario
+            LoginNuevo.actualizarBinario("mecanicos.dat", mecanicos);
+
+            //Cerrar la ventana actual
+            this.dispose();
+
+            //Mostrar la ventana de inicio de sesión (Login)
+            Login login = new Login();
+            login.setVisible(true);
+            RegistroNuevo.imprimirContenidoBinario("mecanicos.dat");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_CerrarSesionMouseClicked
 
     /**
