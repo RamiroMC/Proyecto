@@ -6,6 +6,7 @@ package InterfacesLogin;
 
 import InterfacesApp.Tablon;
 import ClasesApp.Mecanico;
+import static InterfacesLogin.RegistroNuevo.imprimirContenidoBinario;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -187,6 +188,7 @@ public class LoginNuevo extends javax.swing.JPanel {
                 if (frame != null) {
                     frame.dispose();
                 }
+                RegistroNuevo.imprimirContenidoBinario("mecanicos.dat");
             } else {
                 //Si los datos son incorrectas, imprimir un mensaje de error en la consola
                 System.out.println("Usuario o contraseña incorrectos.");
