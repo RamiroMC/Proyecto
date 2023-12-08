@@ -38,7 +38,6 @@ public class LoginNuevo extends javax.swing.JPanel {
 
         Contenedor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         Nombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -53,14 +52,6 @@ public class LoginNuevo extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Inicia sesión");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/acceso.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
-            }
-        });
 
         jLabel3.setFont(new java.awt.Font("Showcard Gothic", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -99,10 +90,6 @@ public class LoginNuevo extends javax.swing.JPanel {
         Contenedor.setLayout(ContenedorLayout);
         ContenedorLayout.setHorizontalGroup(
             ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ContenedorLayout.createSequentialGroup()
-                .addGap(0, 160, Short.MAX_VALUE)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148))
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(ContenedorLayout.createSequentialGroup()
                 .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,15 +107,13 @@ public class LoginNuevo extends javax.swing.JPanel {
                     .addGroup(ContenedorLayout.createSequentialGroup()
                         .addGap(148, 148, 148)
                         .addComponent(Iniciar, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         ContenedorLayout.setVerticalGroup(
             ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ContenedorLayout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(154, 154, 154)
                 .addGroup(ContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Nombre, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
@@ -185,7 +170,9 @@ public class LoginNuevo extends javax.swing.JPanel {
 
                     //Escribir la lista actualizada de mecánicos en el archivo binario.
                      actualizarBinario("mecanicos.dat", mecanicos);
-
+                          
+                     usuarioAutenticado = true;
+    
                 break;
                 }
             }
@@ -245,17 +232,6 @@ public class LoginNuevo extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_ContraseñaActionPerformed
 
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        Error p = new Error();
-        p.setSize(500, 500);
-        Contenedor.removeAll();
-        Contenedor.add(p);
-        Contenedor.revalidate();
-        Contenedor.repaint();
-        Contenedor.setSize(500, 500);
-        Contenedor.setLocation(500, 0);
-    }//GEN-LAST:event_jLabel2MouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Contenedor;
@@ -263,7 +239,6 @@ public class LoginNuevo extends javax.swing.JPanel {
     private javax.swing.JLabel Iniciar;
     private javax.swing.JTextField Nombre;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
